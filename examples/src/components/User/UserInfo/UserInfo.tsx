@@ -5,6 +5,7 @@ import { Indicator } from '../Indicator';
 import { getUserFullInfo } from './utils';
 import { useUserList } from './hooks';
 import { UserInfoTitle, UserInfoWrapper } from './styles';
+import { UserStatus } from './enums';
 
 type Props = { title: string; userName: string; userEmail: string };
 
@@ -18,6 +19,7 @@ const UserInfo = ({ title, userName, userEmail }: Props) => {
       </Grid>
       <Typography>{userName}</Typography>
       <Typography>{userEmail}</Typography>
+      <Typography>{UserStatus.default}</Typography>
       <Typography>
         {getUserFullInfo({ email: userEmail, name: userName })}
       </Typography>
