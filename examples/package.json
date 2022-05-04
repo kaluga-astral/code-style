@@ -1,0 +1,11 @@
+{
+  "name": "@astral/code-style-examples",
+  "private": true,
+  "scripts": {
+    "lint": "eslint ./src --fix --quiet"
+  },
+  "dependencies": {
+    "@astral/ui": "*"
+  },
+  "devDependencies": {}
+}
