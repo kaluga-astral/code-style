@@ -28,6 +28,15 @@ jobs:
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
+      - name: Build @astral/eslint-node
+        run: npm run build --workspace=@astral/eslint-node
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+      - name: Publish @astral/eslint-node
+        run: npm publish ./packages/eslint-node/lib
+        env:
+          NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
       - name: Generate token
         uses: tibdex/github-app-token@v1
         id: generate-token
