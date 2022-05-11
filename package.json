@@ -20,8 +20,7 @@
     "husky": "^4.3.8",
     "lint-staged": "^11.1.2",
     "read-dir-names": "1.0.0",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.4.4"
+    "rimraf": "^3.0.2"
   },
   "scripts": {
     "lint": "npm run lint --workspaces --if-present",
