@@ -19,12 +19,12 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      - name: Build @astral/cryptopro-cades
-        run: npm run build --workspace=@astral/cryptopro-cades
+      - name: Build @astral/eslint-ts-ui
+        run: npm run build --workspace=@astral/eslint-ts-ui
         env:
           RELEASE_TAG: ${{ github.event.release.tag_name }}
-      - name: Publish @astral/cryptopro-cades
-        run: npm publish ./packages/cryptopro-cades/lib
+      - name: Publish @astral/eslint-ts-ui
+        run: npm publish ./packages/eslint-ts-ui/lib
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
@@ -83,7 +83,7 @@ jobs:
             
             Опубликованные пакеты:
 
-            📦  @astral/cryptopro-cades: ${{ github.event.release.tag_name }}
+            📦  @astral/eslint-ts-ui: ${{ github.event.release.tag_name }}
 
             ⚡️ <a href="${{ github.event.release.html_url }}">Changelog</a>
 
