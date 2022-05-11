@@ -1,5 +1,5 @@
 {
-  "name": "@astral/eslint-ts-ui",
+  "name": "@astral/eslint-node",
   "browser": "./src/index.ts",
   "scripts": {
     "dev": "tsc --watch",
