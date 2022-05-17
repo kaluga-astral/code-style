@@ -11,7 +11,7 @@ const copyCommonFiles = () => {
 
   copy(
     path.resolve(__dirname, '..', '..', 'LICENSE'),
-    `./${DIST_DIR_NAME}/LICENSE`
+    `./${DIST_DIR_NAME}/LICENSE`,
   ).catch((error) => {
     console.error(error);
 
@@ -22,7 +22,7 @@ const copyCommonFiles = () => {
 
   copy(
     path.join(process.cwd(), 'README.md'),
-    `./${DIST_DIR_NAME}/README.md`
+    `./${DIST_DIR_NAME}/README.md`,
   ).catch((error) => {
     console.error(error);
 

@@ -25,13 +25,13 @@ const updatePackagesVersions = (packageJSONPath, rootPackageVersion) => {
         ...packageData,
         dependencies: updateDepsVersions(
           packageData.dependencies || {},
-          rootPackageVersion
+          rootPackageVersion,
         ),
         version: rootPackageVersion,
       },
       null,
-      2
-    )
+      2,
+    ),
   );
 
   return readPackageJSON(packageJSONPath);
@@ -69,11 +69,11 @@ const modifyPackageJSON = () => {
           url: 'https://github.com/kaluga-astral/code-style/issues',
         },
         keywords,
-        main: './index.js'
+        main: './index.js',
       },
       null,
-      2
-    )
+      2,
+    ),
   );
 
   console.log('Finish modifyPackageJSON');

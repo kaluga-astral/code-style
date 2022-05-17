@@ -1,6 +1,16 @@
+const getDirNames = require('read-dir-names');
+const path = require("path");
+
+const packagesCommands = getDirNames(path.resolve(__dirname, 'packages')).reduce(
+  (result, packageName) => ({
+    [`packages/${packageName}/**/*.{js}`]: [
+      `npm run lint --workspace=@astral/${packageName}`,
+    ],
+  }),
+  {},
+);
+
 module.exports = {
-  'packages/**/*.{js}': [
-    'npm run lint',
-  ],
+  ...packagesCommands,
   'commander/**/*.{js}': ['npm run lint --workspace=@astral/commander'],
 };
