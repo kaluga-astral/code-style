@@ -63,16 +63,13 @@ const modifyPackageJSON = () => {
         license: 'MIT',
         repository: {
           type: 'git',
-          url: 'git+https://github.com/kaluga-astral/services',
+          url: 'git+https://github.com/kaluga-astral/code-style',
         },
         bugs: {
-          url: 'https://github.com/kaluga-astral/services/issues',
+          url: 'https://github.com/kaluga-astral/code-style/issues',
         },
         keywords,
-        sideEffects: false,
-        types: './esm/index.d.ts',
-        main: './index.js',
-        module: './esm/index.js',
+        main: './index.js'
       },
       null,
       2
