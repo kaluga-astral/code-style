@@ -2,17 +2,12 @@
   "name": "@astral/eslint-config-node",
   "main": "index.js",
   "version": "1.0.0",
-  "exports": {
-    ".": "./index.js",
-    "./package.json": "./package.json"
-  },
-  "version": "1.0.0",
   "scripts": {
     "dev": "tsc --watch",
     "prebuild": "npx rimraf ./lib",
     "build": "commander build",
     "publish": "npm publish ./lib",
-    "lint": "eslint ./src --fix --quiet"
+    "lint": "eslint . --fix --quiet"
   },
   "dependencies": {
     "@astral/eslint-base": "^1.0.0",
