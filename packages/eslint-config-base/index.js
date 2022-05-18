@@ -42,5 +42,42 @@ module.exports = {
 
     // добавляет запятую в конец списка, если представлен в виде нескольких строк
     'comma-dangle': ['error', 'always-multiline'],
+
+    // добавляет отступы между конструкциями
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: ['const', 'let'], next: '*' },
+      { blankLine: 'always', prev: '*', next: ['const', 'let'] },
+      {
+        blankLine: 'any',
+        prev: ['const', 'let'],
+        next: ['const', 'let'],
+      },
+      { blankLine: 'always', prev: 'directive', next: '*' },
+      { blankLine: 'any', prev: 'directive', next: 'directive' },
+      { blankLine: 'always', prev: '*', next: 'return' },
+      { blankLine: 'always', prev: '*', next: 'break' },
+      { blankLine: 'always', prev: '*', next: 'switch' },
+      { blankLine: 'always', prev: 'switch', next: '*' },
+      { blankLine: 'always', prev: '*', next: 'try' },
+      { blankLine: 'always', prev: 'try', next: '*' },
+      { blankLine: 'always', prev: 'while', next: '*' },
+      { blankLine: 'always', prev: '*', next: 'while' },
+      { blankLine: 'always', prev: '*', next: 'if' },
+      { blankLine: 'always', prev: 'if', next: '*' },
+      { blankLine: 'always', prev: '*', next: 'for' },
+      { blankLine: 'always', prev: 'for', next: '*' },
+      { blankLine: 'always', prev: '*', next: 'function' },
+      { blankLine: 'always', prev: 'function', next: '*' },
+      { blankLine: 'always', prev: '*', next: 'export' },
+      { blankLine: 'always', prev: 'export', next: '*' },
+      { blankLine: 'always', prev: '*', next: 'class' },
+      { blankLine: 'always', prev: 'class', next: '*' },
+      { blankLine: 'never', prev: 'expression', next: 'expression' },
+      { blankLine: 'never', prev: 'expression', next: 'expression' },
+    ],
+
+    // делает обязательным скобки для if
+    curly: ['error', 'all'],
   },
 };
