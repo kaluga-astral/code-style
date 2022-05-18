@@ -1,0 +1,11 @@
+{
+  "name": "@astral/node-eslint-example",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@astral/eslint-config-node": "*"
+  }
+}
