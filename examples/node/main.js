@@ -22,8 +22,10 @@ app.get('/', (req, res, next) => {
       break;
 
     default:
-      return;
+      console.log(req.cookies);
   }
 
   next();
+
+  return 22;
 });

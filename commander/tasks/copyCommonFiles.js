@@ -6,7 +6,6 @@ const { DIST_DIR_NAME } = require('../constants');
 
 const copyCommonFiles = () => {
   console.log('Starting copyCommonFiles...');
-
   console.log('Copy LICENSE');
 
   copy(
@@ -14,7 +13,6 @@ const copyCommonFiles = () => {
     `./${DIST_DIR_NAME}/LICENSE`,
   ).catch((error) => {
     console.error(error);
-
     process.exit(1);
   });
 
@@ -25,7 +23,6 @@ const copyCommonFiles = () => {
     `./${DIST_DIR_NAME}/README.md`,
   ).catch((error) => {
     console.error(error);
-
     process.exit(1);
   });
 

@@ -5,6 +5,9 @@
     "examples/*",
     "commander"
   ],
+  "engines": {
+    "node": ">=16"
+  },
   "devDependencies": {
     "@astral/commander": "*",
     "commitlint": "16.2.1",

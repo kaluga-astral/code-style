@@ -74,7 +74,9 @@ module.exports = {
       { blankLine: 'always', prev: '*', next: 'class' },
       { blankLine: 'always', prev: 'class', next: '*' },
       { blankLine: 'never', prev: 'expression', next: 'expression' },
-      { blankLine: 'never', prev: 'expression', next: 'expression' },
+      // добавляет отступы перед и после, если выражение написано в несколько строк (например, promise)
+      { blankLine: 'always', prev: 'multiline-expression', next: '*' },
+      { blankLine: 'always', prev: '*', next: 'multiline-expression' },
     ],
 
     // делает обязательным скобки для if

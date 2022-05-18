@@ -3,10 +3,8 @@ const { modifyPackageJSON } = require('./modifyPackageJSON');
 
 const build = () => {
   console.log('Starting build...');
-
   copyCommonFiles();
   modifyPackageJSON();
-
   console.log('Finish build');
 };
 
