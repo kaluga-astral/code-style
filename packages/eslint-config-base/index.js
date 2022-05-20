@@ -2,21 +2,15 @@ module.exports = {
   extends: ['plugin:prettier/recommended'],
   plugins: ['prettier'],
   rules: {
-    /**
-     * Определяется конфиг для prettier для того, чтобы его не надо было определять в проекте
-     */
+    // определяется конфиг для prettier для того, чтобы его не надо было определять в проекте
     'prettier/prettier': ['error', { singleQuote: true, trailingComma: 'all' }],
 
     quotes: ['error', 'single'],
 
-    /**
-     * Запрещает больше одной пустой строки
-     */
+    // запрещает больше одной пустой строки
     'no-multiple-empty-lines': 'error',
 
-    /**
-     * Добавляет разделительные пустые строки для блоков импортов
-     */
+    // добавляет разделительные пустые строки для блоков импортов
     'import/order': [
       'error',
       {
@@ -34,9 +28,7 @@ module.exports = {
       },
     ],
 
-    /**
-     * Сортирует импорты
-     */
+    // сортирует импорты
     'sort-imports': [
       'error',
       {
@@ -48,14 +40,10 @@ module.exports = {
       },
     ],
 
-    /**
-     * Добавляет запятую в конец списка, если представлен в виде нескольких строк
-     */
+    // добавляет запятую в конец списка, если представлен в виде нескольких строк
     'comma-dangle': ['error', 'always-multiline'],
 
-    /**
-     * Добавляет отступы между конструкциями
-     */
+    // добавляет отступы между конструкциями
     'padding-line-between-statements': [
       'error',
       { blankLine: 'always', prev: ['const', 'let'], next: '*' },
@@ -86,30 +74,12 @@ module.exports = {
       { blankLine: 'always', prev: '*', next: 'class' },
       { blankLine: 'always', prev: 'class', next: '*' },
       { blankLine: 'never', prev: 'expression', next: 'expression' },
-
-      /**
-       * Добавляет отступы перед и после, если выражение написано в несколько строк (например, promise)
-       * @example
-       *   console.log('Starting copyCommonFiles...');
-       *   console.log('Copy LICENSE');
-       *
-       *   copy(
-       *     path.resolve(__dirname, '..', '..', 'LICENSE'),
-       *     `./${DIST_DIR_NAME}/LICENSE`,
-       *   ).catch((error) => {
-       *     console.error(error);
-       *     process.exit(1);
-       *   });
-       *
-       *   console.log('Copy README.md');
-       */
+      // добавляет отступы перед и после, если выражение написано в несколько строк (например, promise)
       { blankLine: 'always', prev: 'multiline-expression', next: '*' },
       { blankLine: 'always', prev: '*', next: 'multiline-expression' },
     ],
 
-    /**
-     * Делает обязательным скобки для if
-     */
+    // делает обязательным скобки для if
     curly: ['error', 'all'],
   },
 };
