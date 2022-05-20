@@ -1,8 +1,16 @@
-// eslint-disable-next-line
+const getDirNames = require('read-dir-names');
+const path = require("path");
+
+const packagesCommands = getDirNames(path.resolve(__dirname, 'packages')).reduce(
+  (result, packageName) => ({
+    [`packages/${packageName}/**/*.{js}`]: [
+      `npm run lint --workspace=@astral/${packageName}`,
+    ],
+  }),
+  {},
+);
+
 module.exports = {
-  'packages/cryptopro-cades/**/*.{ts}': [
-    'npm run lint --workspace=@astral/cryptopro-cades',
-    () => 'npm run lint:types --workspace=@astral/cryptopro-cades',
-  ],
+  ...packagesCommands,
   'commander/**/*.{js}': ['npm run lint --workspace=@astral/commander'],
 };
