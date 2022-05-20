@@ -2,15 +2,21 @@ module.exports = {
   extends: ['plugin:prettier/recommended'],
   plugins: ['prettier'],
   rules: {
-    // определяется конфиг для prettier для того, чтобы его не надо было определять в проекте
+    /**
+     * Определяется конфиг для prettier для того, чтобы его не надо было определять в проекте
+     */
     'prettier/prettier': ['error', { singleQuote: true, trailingComma: 'all' }],
 
     quotes: ['error', 'single'],
 
-    // запрещает больше одной пустой строки
+    /**
+     * Запрещает больше одной пустой строки
+     */
     'no-multiple-empty-lines': 'error',
 
-    // добавляет разделительные пустые строки для блоков импортов
+    /**
+     * Добавляет разделительные пустые строки для блоков импортов
+     */
     'import/order': [
       'error',
       {
@@ -28,7 +34,9 @@ module.exports = {
       },
     ],
 
-    // сортирует импорты
+    /**
+     * Сортирует импорты
+     */
     'sort-imports': [
       'error',
       {
@@ -40,10 +48,14 @@ module.exports = {
       },
     ],
 
-    // добавляет запятую в конец списка, если представлен в виде нескольких строк
+    /**
+     * Добавляет запятую в конец списка, если представлен в виде нескольких строк
+     */
     'comma-dangle': ['error', 'always-multiline'],
 
-    // добавляет отступы между конструкциями
+    /**
+     * Добавляет отступы между конструкциями
+     */
     'padding-line-between-statements': [
       'error',
       { blankLine: 'always', prev: ['const', 'let'], next: '*' },
@@ -74,12 +86,30 @@ module.exports = {
       { blankLine: 'always', prev: '*', next: 'class' },
       { blankLine: 'always', prev: 'class', next: '*' },
       { blankLine: 'never', prev: 'expression', next: 'expression' },
-      // добавляет отступы перед и после, если выражение написано в несколько строк (например, promise)
+
+      /**
+       * Добавляет отступы перед и после, если выражение написано в несколько строк (например, promise)
+       * @example
+       *   console.log('Starting copyCommonFiles...');
+       *   console.log('Copy LICENSE');
+       *
+       *   copy(
+       *     path.resolve(__dirname, '..', '..', 'LICENSE'),
+       *     `./${DIST_DIR_NAME}/LICENSE`,
+       *   ).catch((error) => {
+       *     console.error(error);
+       *     process.exit(1);
+       *   });
+       *
+       *   console.log('Copy README.md');
+       */
       { blankLine: 'always', prev: 'multiline-expression', next: '*' },
       { blankLine: 'always', prev: '*', next: 'multiline-expression' },
     ],
 
-    // делает обязательным скобки для if
+    /**
+     * Делает обязательным скобки для if
+     */
     curly: ['error', 'all'],
   },
 };

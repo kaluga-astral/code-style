@@ -5,7 +5,13 @@ module.exports = {
     requireConfigFile: false,
   },
   rules: {
-    // отключается ошибка при модификации параметров. Данный механизм часто используется в express
+    /**
+     * Отключается ошибка при модификации параметров. Данный механизм часто используется в express
+     * @example
+     *   app.get('/', (req, res, next) => {
+     *     req.cookies.token = 'token';
+     *   });
+     */
     'no-param-reassign': [2, { props: false }],
   },
   env: {
