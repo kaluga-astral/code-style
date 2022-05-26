@@ -1,0 +1,19 @@
+{
+  "name": "@astral/eslint-config-ts-ui",
+  "main": "index.js",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tsc --watch",
+    "prebuild": "npx rimraf ./lib",
+    "build": "commander build",
+    "publish": "npm publish ./lib",
+    "lint": "eslint . --fix --quiet"
+  },
+  "dependencies": {
+    "@astral/eslint-base": "^1.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "8.x.x",
+    "prettier": "2.x.x"
+  }
+}
