@@ -8,13 +8,13 @@ type Props = {
   footer: ReactNode | FunctionComponent;
 };
 
-const Indicator = ({ isShowFooter, footer }: Props) => {
+export const Indicator = ({ isShowFooter, footer }: Props) => {
   return (
     <IndicatorWrapper>
-      {getIndicatorName()}
-      {isShowFooter && footer}
+      <>
+        {getIndicatorName()}
+        {isShowFooter && footer}
+      </>
     </IndicatorWrapper>
   );
 };
-
-export default Indicator;
