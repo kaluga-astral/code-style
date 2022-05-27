@@ -1,7 +1,9 @@
 {
   "name": "@astral/node-eslint-example",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint . --fix --quiet"
+  },
   "dependencies": {
     "express": "^4.18.1"
   },

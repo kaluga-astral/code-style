@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['plugin:prettier/recommended'],
-  plugins: ['prettier'],
+  plugins: ['prettier', 'import'],
   rules: {
     // определяется конфиг для prettier для того, чтобы его не надо было определять в проекте
     'prettier/prettier': ['error', { singleQuote: true, trailingComma: 'all' }],
@@ -9,6 +9,9 @@ module.exports = {
 
     // запрещает больше одной пустой строки
     'no-multiple-empty-lines': 'error',
+
+    // отключает правило, которое заставялет делать дефолтный экспорт, если экспортиться только одна сущность
+    'import/prefer-default-export': 'off',
 
     // добавляет разделительные пустые строки для блоков импортов
     'import/order': [
