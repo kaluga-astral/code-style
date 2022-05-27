@@ -7,9 +7,14 @@ import { useUserList } from './hooks';
 import { UserInfoTitle, UserInfoWrapper } from './styles';
 import { UserStatus } from './enums';
 
-type Props = { title: string; userName: string; userEmail: string };
+type Props = {
+  title: string;
+  userName: string;
+  userEmail: string;
+  onClickBtn: () => void;
+};
 
-const UserInfo = ({ title, userName, userEmail }: Props) => {
+const UserInfo = ({ title, userName, userEmail, onClickBtn }: Props) => {
   const list = useUserList();
 
   return (
@@ -29,6 +34,7 @@ const UserInfo = ({ title, userName, userEmail }: Props) => {
         ))}
       </ul>
       <Indicator isShowFooter footer={<footer>footer</footer>} />
+      <button onClick={onClickBtn}>btn</button>
     </UserInfoWrapper>
   );
 };
