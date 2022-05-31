@@ -84,8 +84,5 @@ module.exports = {
 
     // делает обязательным скобки для if
     curly: ['error', 'all'],
-
-    // убирает return в стрелочной функции, если в ней кроме return ничего нет
-    'arrow-body-style': ['error', 'as-needed'],
   },
 };
