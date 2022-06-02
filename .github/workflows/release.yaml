@@ -19,21 +19,39 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      - name: Build @astral/eslint-ts-ui
-        run: npm run build --workspace=@astral/eslint-ts-ui
+      - name: Build @astral/eslint-config-base
+        run: npm run build --workspace=@astral/eslint-config-base
         env:
           RELEASE_TAG: ${{ github.event.release.tag_name }}
-      - name: Publish @astral/eslint-ts-ui
-        run: npm publish ./packages/eslint-ts-ui/lib
+      - name: Publish @astral/eslint-config-base
+        run: npm publish ./packages/eslint-config-base/lib
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
-      - name: Build @astral/eslint-node
-        run: npm run build --workspace=@astral/eslint-node
+      - name: Build @astral/eslint-config-node
+        run: npm run build --workspace=@astral/eslint-config-node
         env:
           RELEASE_TAG: ${{ github.event.release.tag_name }}
-      - name: Publish @astral/eslint-node
-        run: npm publish ./packages/eslint-node/lib
+      - name: Publish @astral/eslint-config-node
+        run: npm publish ./packages/eslint-config-node/lib
+        env:
+          NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
+      - name: Build @astral/eslint-config-node-ts
+        run: npm run build --workspace=@astral/eslint-config-node-ts
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+      - name: Publish @astral/eslint-config-node-ts
+        run: npm publish ./packages/eslint-config-node-ts/lib
+        env:
+          NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
+      - name: Build @astral/eslint-config-react-ts
+        run: npm run build --workspace=@astral/eslint-config-react-ts
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+      - name: Publish @astral/eslint-config-react-ts
+        run: npm publish ./packages/eslint-config-react-ts/lib
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
@@ -88,11 +106,14 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: html
           message: |
-            🚀 <b>Были опубликованы новые версии пакетов services !</b>
+            🚀 <b>Были опубликованы новые версии пакетов code style !</b>
             
             Опубликованные пакеты:
 
-            📦  @astral/eslint-ts-ui: ${{ github.event.release.tag_name }}
+            📦  @astral/eslint-config-base: ${{ github.event.release.tag_name }}
+            📦  @astral/eslint-config-node: ${{ github.event.release.tag_name }}
+            📦  @astral/eslint-config-node-ts: ${{ github.event.release.tag_name }}
+            📦  @astral/eslint-config-react-ts: ${{ github.event.release.tag_name }}
 
             ⚡️ <a href="${{ github.event.release.html_url }}">Changelog</a>
 
