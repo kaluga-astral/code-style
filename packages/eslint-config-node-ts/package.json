@@ -1,0 +1,24 @@
+{
+  "name": "@astral/eslint-config-node-ts",
+  "main": "index.js",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tsc --watch",
+    "prebuild": "npx rimraf ./lib",
+    "build": "commander build",
+    "publish": "npm publish ./lib",
+    "lint": "eslint . --fix --quiet"
+  },
+  "dependencies": {
+    "@astral/eslint-base": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "~5.27.0",
+    "@typescript-eslint/parser": "^5.26.0"
+  },
+  "devDependencies": {
+    "@astral/eslint-config-node": "*"
+  },
+  "peerDependencies": {
+    "eslint": "8.x.x",
+    "prettier": "2.x.x"
+  }
+}
