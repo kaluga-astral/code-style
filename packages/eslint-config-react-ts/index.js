@@ -51,7 +51,8 @@ module.exports = {
     'react/jsx-handler-names': [
       'error',
       {
-        eventHandlerPrefix: 'handle',
+        // отключены правила для handler потому, что оно не позволяет проксировать пропсы без handle - https://github.com/jsx-eslint/eslint-plugin-react/issues/2400
+        eventHandlerPrefix: false,
         eventHandlerPropPrefix: 'on',
         // позволяет использовать правило в функциональных компонентах
         checkLocalVariables: true,
