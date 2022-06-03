@@ -23,5 +23,6 @@
   "peerDependencies": {
     "eslint": "8.x.x",
     "prettier": "2.x.x"
-  }
+  },
+  "version": "1.0.0"
 }
