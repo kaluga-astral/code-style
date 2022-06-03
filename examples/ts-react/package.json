@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "@astral/ui": "*",
-    "typescript": "^4.4.4",
+    "typescript": "^4.7.2",
     "react": "^18.1.0",
     "@types/react": "^18.0.9"
   },

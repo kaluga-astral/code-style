@@ -1,3 +1,1 @@
-export const useUserList = (): string[] => {
-  return ['A', 'B'];
-};
+export const useUserList = (): string[] => ['A', 'B'];
