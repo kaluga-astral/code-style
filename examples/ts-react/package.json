@@ -2,7 +2,8 @@
   "name": "@astral/code-style-examples",
   "private": true,
   "scripts": {
-    "lint": "eslint . --fix --quiet"
+    "lint": "eslint . --fix --quiet",
+    "lint:styles": "stylelint 'src/**/*{.ts,.tsx}' --fix"
   },
   "dependencies": {
     "@astral/ui": "*",
@@ -12,6 +13,8 @@
   },
   "devDependencies": {
     "@astral/eslint-config-react-ts": "*",
+    "@astral/stylelint-config-styled": "*",
+    "stylelint": "^14.8.5",
     "eslint": "^8.15.0",
     "prettier": "^2.6.2"
   }
