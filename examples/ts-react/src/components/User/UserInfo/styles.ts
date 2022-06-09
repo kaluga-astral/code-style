@@ -2,7 +2,19 @@ import { styled } from '@astral/ui';
 import { Grid, Typography } from '@astral/ui';
 
 export const UserInfoWrapper = styled(Grid)`
-  background-color: ${({ theme }) => theme.palette.background.default};
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: ${({ theme }) => theme.typography.button.fontWeight};
+  font-size: ${({ theme }) => theme.typography.button.fontSize};
+  font-family: Ubuntu, serif;
+
+  border: none;
+  border-radius: ${({ theme }) => theme.shape.small};
+  cursor: pointer;
 `;
 
 export const UserInfoTitle = styled(Typography)`
