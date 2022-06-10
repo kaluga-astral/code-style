@@ -55,6 +55,15 @@ jobs:
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
+      - name: Build @astral/stylelint-config-styled
+        run: npm run build --workspace=@astral/stylelint-config-styled
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+      - name: Publish @astral/stylelint-config-styled
+        run: npm publish ./packages/stylelint-config-styled/lib
+        env:
+          NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
   notify:
     name: notify
     needs: releasePackages
