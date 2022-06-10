@@ -68,13 +68,16 @@ jobs:
           format: html
           message: |
             🚀 <b>Были опубликованы новые версии пакетов code style !</b>
-            
-            Опубликованные пакеты:
 
+            ⚡️ <b>ESLint</b>
             📦  @astral/eslint-config-base: ${{ github.event.release.tag_name }}
             📦  @astral/eslint-config-node: ${{ github.event.release.tag_name }}
             📦  @astral/eslint-config-node-ts: ${{ github.event.release.tag_name }}
             📦  @astral/eslint-config-react-ts: ${{ github.event.release.tag_name }}
+            📦  @astral/eslint-config-react-ts: ${{ github.event.release.tag_name }}
+
+            ⚡️ <b>Stylelint</b>
+            📦  @astral/stylelint-config-styled: ${{ github.event.release.tag_name }}
 
             ⚡️ <a href="${{ github.event.release.html_url }}">Changelog</a>
 
