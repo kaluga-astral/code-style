@@ -64,6 +64,9 @@ module.exports = {
 
     // подсвечивает для зависимостей хука warning
     'react-hooks/exhaustive-deps': 'warn',
+
+    // не дает указывать any в коде
+    '@typescript-eslint/no-explicit-any': 'error',
   },
 
   settings: {

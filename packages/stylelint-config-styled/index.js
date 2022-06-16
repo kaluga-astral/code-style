@@ -1,7 +1,14 @@
+const path = require('path');
+
 module.exports = {
   overrides: [
     {
-      files: ['/**/*.ts', '/**/*.tsx', '/**/*.js', '/**/*.jsx'],
+      files: [
+        `${path.sep}**${path.sep}*.ts`,
+        `${path.sep}**${path.sep}*.tsx`,
+        `${path.sep}**${path.sep}*.js`,
+        `${path.sep}**${path.sep}*.jsx`,
+      ],
 
       customSyntax: '@stylelint/postcss-css-in-js',
 
