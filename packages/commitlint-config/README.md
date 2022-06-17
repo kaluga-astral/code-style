@@ -1,7 +1,5 @@
 # @astral/commitlint-config
 
-Eslint config for react with typescript
-
 # Usage
 
 ## Installation
@@ -16,11 +14,15 @@ npm i commitlint @astral/commitlint-config --save-dev
 yarn add commitlint @astral/commitlint-config -D
 ```
 
+### Configuration
 ```commitlint.config.js```
 ```js
-module.exports = {
-  extends: ['@astral/commitlint-config']
-}
+const { createConfig } = require('@astral/commitlint-config');
+
+module.exports = createConfig({
+  scopes: ['ui', 'server'],
+  ticketPrefix: 'UIKIT',
+});
 ```
 
 ```.huskyrc```
@@ -32,11 +34,21 @@ module.exports = {
 }
 ```
 
-# Формат
+### Message example
+#### Valid
+```feat(UIKIT-222,ui): Title```
+```feat: Title```
+```feat(UIKIT-222): Title```
+
+#### Invalid
+```feat(UIKIT222): Title```
+```feat(unknown): Title```
+
+# Format
 
 ```${ENUM}(SCOPE|TASK): Description```
 
-ENUM:
+Default ENUM:
 - feat
 - bug
 - wip (work in progress)
@@ -45,4 +57,31 @@ ENUM:
 - build
 - chore
 
-## Примеры
+# API
+## createConfig
+```ts
+const { createConfig } = require('@astral/commitlint-config');
+
+type Params = {
+  /**
+   * Список доступных scopes.
+   * @example
+   * // createConfig({ scopes: ['server', 'ui'], ticketPrefix: 'UIKIT' })
+   */
+  scopes?: string[];
+  /**
+   * Название префикса задач, данный префикс будет доступен в scope.
+   * @example
+   * // createConfig({ ticketPrefix: 'UIKIT' })
+   */
+  ticketPrefix: string;
+  /**
+   * Список доступных type. Дефолтное значение указано в разделе Format
+   * @example
+   * // createConfig({ typeEnum: ['feat', 'ci'], ticketPrefix: 'UIKIT',  })
+   */
+  typeEnum?: string[];
+};
+  
+createConfig(params: Params);
+```
