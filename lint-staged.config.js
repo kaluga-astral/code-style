@@ -1,7 +1,11 @@
-const getDirNames = require('read-dir-names');
-const path = require("path");
+const path = require('path');
 
-const packagesCommands = getDirNames(path.resolve(__dirname, 'packages')).reduce(
+// eslint-disable-next-line import/no-extraneous-dependencies
+const getDirNames = require('read-dir-names');
+
+const packagesCommands = getDirNames(
+  path.resolve(__dirname, 'packages'),
+).reduce(
   (result, packageName) => ({
     [`packages/${packageName}/**/*.{js}`]: [
       `npm run lint --workspace=@astral/${packageName}`,
