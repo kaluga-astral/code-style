@@ -1,12 +1,29 @@
+const DEFAULT_TYPE_ENUM = [
+  'feat',
+  'bug',
+  'wip',
+  'refactor',
+  'doc',
+  'build',
+  'chore',
+  'revert',
+  'style',
+];
+
 /**
  * Создает commitlint config
  * @param {Object} params - Параметры инициализации конфига.
  * @param {string[]} params.scopes - Список доступных scopes.
  * @param {string} params.ticketPrefix - Название префикса задач, данный префикс будет доступен в scope.
+ * @param {string[]} params.typeEnum - Список доступных type.
  * @example
  * // createConfig({ scopes: ['server', 'ui'], ticketPrefix: 'UIKIT' })
  */
-const createConfig = ({ scopes, ticketPrefix }) => ({
+const createConfig = ({
+  scopes,
+  ticketPrefix,
+  typeEnum = DEFAULT_TYPE_ENUM,
+}) => ({
   extends: ['@commitlint/config-conventional'],
 
   plugins: ['commitlint-plugin-function-rules'],
@@ -40,22 +57,7 @@ const createConfig = ({ scopes, ticketPrefix }) => ({
     'type-empty': [2, 'never'],
 
     // Перечислим все возможные варианты коммитов
-    'type-enum': [
-      2,
-      'always',
-      [
-        'feat',
-        'bug',
-        'wip',
-        'refactor',
-        'doc',
-        'build',
-        'chore',
-        'revert',
-        'style',
-        'wip',
-      ],
-    ],
+    'type-enum': [2, 'always', typeEnum],
 
     // функция вызывается при проверке scopes
     'function-rules/scope-enum': [
@@ -68,11 +70,11 @@ const createConfig = ({ scopes, ticketPrefix }) => ({
           return [true];
         }
 
-        const scopesEnumsString = [...scopes, `${ticketPrefix}-XXXX`].join(
+        const scopesEnumsMessage = [...scopes, `${ticketPrefix}-XXXX`].join(
           ', ',
         );
 
-        return [false, `scope must be one of ${scopesEnumsString}`];
+        return [false, `scope must be one of [${scopesEnumsMessage}]`];
       },
     ],
   },
