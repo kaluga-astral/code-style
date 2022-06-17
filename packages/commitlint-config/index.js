@@ -15,7 +15,7 @@ const DEFAULT_TYPE_ENUM = [
  * @param {Object} params - Параметры инициализации конфига.
  * @param {string[]} [params.scopes=[]] - Список доступных scopes.
  * @param {string} params.ticketPrefix - Название префикса задач, данный префикс будет доступен в scope.
- * @param {string[]} params.typeEnum - Список доступных type.
+ * @param {string[]} [params.typeEnum=[]] - Список доступных type.
  * @example
  * // createConfig({ scopes: ['server', 'ui'], ticketPrefix: 'UIKIT' })
  */
