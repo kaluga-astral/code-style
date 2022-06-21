@@ -16,6 +16,9 @@ module.exports = {
   rules: {
     // отключается ошибка при модификации параметров. Данный механизм часто используется в express
     'no-param-reassign': [2, { props: false }],
+
+    // не дает указывать any в коде
+    '@typescript-eslint/no-explicit-any': 'error',
   },
 
   env: {
