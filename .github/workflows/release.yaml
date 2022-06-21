@@ -64,6 +64,15 @@ jobs:
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
+      - name: Build @astral/commitlint-config
+        run: npm run build --workspace=@astral/commitlint-config
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+      - name: Publish @astral/commitlint-config
+        run: npm publish ./packages/commitlint-config/lib
+        env:
+          NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
   notify:
     name: notify
     needs: releasePackages
@@ -86,6 +95,9 @@ jobs:
 
             ⚡️ <b>Stylelint</b>
             📦  @astral/stylelint-config-styled: ${{ github.event.release.tag_name }}
+
+            ⚡️ <b>Commitlint</b>
+            📦  @astral/commitlint-config: ${{ github.event.release.tag_name }}
 
             ⚡️ <a href="${{ github.event.release.html_url }}">Changelog</a>
 
