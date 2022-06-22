@@ -38,9 +38,6 @@ const createConfig = ({
     // Максимальная длина заголовка 90 символов
     'header-max-length': [2, 'always', 90],
 
-    // Для scope разрешается использовать только: lower-case, camel-case, kebab-case, pascal-case
-    'scope-case': [2, 'never', ['sentence-case', 'start-case']],
-
     // Описание не может быть пустым
     'subject-empty': [2, 'never'],
 
