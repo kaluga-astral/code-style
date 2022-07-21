@@ -19,55 +19,36 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      - name: Build @astral/eslint-config-base
-        run: npm run build --workspace=@astral/eslint-config-base
+      - name: Build packages
+        run: npm run build
         env:
           RELEASE_TAG: ${{ github.event.release.tag_name }}
+
       - name: Publish @astral/eslint-config-base
         run: npm publish ./packages/eslint-config-base/lib
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
-      - name: Build @astral/eslint-config-node
-        run: npm run build --workspace=@astral/eslint-config-node
-        env:
-          RELEASE_TAG: ${{ github.event.release.tag_name }}
       - name: Publish @astral/eslint-config-node
         run: npm publish ./packages/eslint-config-node/lib
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
-      - name: Build @astral/eslint-config-node-ts
-        run: npm run build --workspace=@astral/eslint-config-node-ts
-        env:
-          RELEASE_TAG: ${{ github.event.release.tag_name }}
       - name: Publish @astral/eslint-config-node-ts
         run: npm publish ./packages/eslint-config-node-ts/lib
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
-      - name: Build @astral/eslint-config-react-ts
-        run: npm run build --workspace=@astral/eslint-config-react-ts
-        env:
-          RELEASE_TAG: ${{ github.event.release.tag_name }}
       - name: Publish @astral/eslint-config-react-ts
         run: npm publish ./packages/eslint-config-react-ts/lib
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
-      - name: Build @astral/stylelint-config-styled
-        run: npm run build --workspace=@astral/stylelint-config-styled
-        env:
-          RELEASE_TAG: ${{ github.event.release.tag_name }}
       - name: Publish @astral/stylelint-config-styled
         run: npm publish ./packages/stylelint-config-styled/lib
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
-      - name: Build @astral/commitlint-config
-        run: npm run build --workspace=@astral/commitlint-config
-        env:
-          RELEASE_TAG: ${{ github.event.release.tag_name }}
       - name: Publish @astral/commitlint-config
         run: npm publish ./packages/commitlint-config/lib
         env:
