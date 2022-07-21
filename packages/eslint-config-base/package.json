@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "tsc --watch",
-    "prebuild": "npx rimraf ./lib",
     "build": "commander build",
     "publish": "npm publish ./lib",
     "lint": "eslint . --fix --quiet"

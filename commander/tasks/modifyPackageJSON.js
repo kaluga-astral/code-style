@@ -30,7 +30,6 @@ const updatePackagesVersions = (packageJSONPath, rootPackageVersion) => {
           packageData.dependencies || {},
           rootPackageVersion,
         ),
-        version: rootPackageVersion,
       },
       null,
       2,
