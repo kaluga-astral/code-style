@@ -11,6 +11,7 @@ const prebuild = () => {
 
   fs.rmSync(path.join(process.cwd(), DIST_DIR_NAME), {
     recursive: true,
+    force: true,
   });
 
   console.log('Finish prebuild');
