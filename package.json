@@ -23,6 +23,6 @@
   "scripts": {
     "lint": "npm run lint --workspaces --if-present",
     "lint:types": "npm run lint:types --workspaces --if-present",
-    "publish": "npm run build --workspaces --if-present && npm run publish --workspaces --if-present"
+    "build": "npm run build --workspaces --if-present"
   }
 }
