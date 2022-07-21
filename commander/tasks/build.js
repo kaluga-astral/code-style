@@ -1,3 +1,5 @@
+const path = require('path');
+
 const copy = require('recursive-copy');
 
 const { DIST_DIR_NAME } = require('../constants');
@@ -9,7 +11,7 @@ const build = () => {
   console.log('Starting build...');
   console.log('Copy .js files...');
 
-  copy('./', `./${DIST_DIR_NAME}`, {
+  copy(process.cwd(), path.join(process.cwd(), DIST_DIR_NAME), {
     filter: ['**/*.js'],
     overwrite: true,
     expand: true,

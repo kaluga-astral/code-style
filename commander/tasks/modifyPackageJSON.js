@@ -44,7 +44,10 @@ const modifyPackageJSON = () => {
   console.log('Starting modifyPackageJSON...');
   console.log('Update packages versions and deps');
 
-  const packageData = updatePackagesVersions('./package.json', RELEASE_TAG);
+  const packageData = updatePackagesVersions(
+    path.resolve(process.cwd(), 'package.json'),
+    RELEASE_TAG,
+  );
 
   const {
     scripts,
