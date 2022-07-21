@@ -20,7 +20,7 @@ const copyCommonFiles = () => {
 
   copy(
     path.join(process.cwd(), 'README.md'),
-    `./${DIST_DIR_NAME}/README.md`,
+    path.join(process.cwd(), DIST_DIR_NAME, 'README.md'),
   ).catch((error) => {
     console.error(error);
     process.exit(1);
