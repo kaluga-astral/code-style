@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 const { PACKAGES_NAMES } = require('../constants');
 
@@ -55,7 +56,7 @@ const modifyPackageJSON = () => {
   console.log('Write data to lib package.json');
 
   fs.writeFileSync(
-    './lib/package.json',
+    path.resolve(process.cwd(), 'lib', 'package.json'),
     JSON.stringify(
       {
         ...restPackageData,
