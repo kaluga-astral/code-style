@@ -6,8 +6,10 @@ const { DIST_DIR_NAME } = require('../constants');
 
 const { modifyPackageJSON } = require('./modifyPackageJSON');
 const { copyCommonFiles } = require('./copyCommonFiles');
+const { prebuild } = require('./prebuild');
 
 const build = () => {
+  prebuild();
   console.log('Starting build...');
   console.log('Copy .js files...');
 

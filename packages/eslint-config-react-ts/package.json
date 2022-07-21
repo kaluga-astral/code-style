@@ -3,7 +3,6 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsc --watch",
-    "prebuild": "npx rimraf ./lib",
     "build": "commander build",
     "publish": "npm publish ./lib",
     "lint": "eslint . --fix --quiet"
