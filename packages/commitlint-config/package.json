@@ -16,6 +16,6 @@
     "@astral/eslint-config-node": "*"
   },
   "peerDependencies": {
-    "commitlint": "16.x.x"
+    "commitlint": ">=16.x.x"
   }
 }
