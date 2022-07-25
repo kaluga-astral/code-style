@@ -11,7 +11,7 @@
   "devDependencies": {
     "@astral/commander": "*",
     "@astral/commitlint-config": "*",
-    "commitlint": "16.2.1",
+    "commitlint": "^17.0.3",
     "eslint": "^8.15.0",
     "prettier": "^2.6.2",
     "husky": "^4.3.8",

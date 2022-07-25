@@ -67,9 +67,9 @@ const createConfig = ({
           return [true];
         }
 
-        const scopesEnumsMessage = scopes
-          .concat([`${ticketPrefix}-XXXX`])
-          .join(', ');
+        const scopesEnumsMessage = [...scopes, `${ticketPrefix}-XXXX`].join(
+          ', ',
+        );
 
         return [false, `scope must be one of [${scopesEnumsMessage}]`];
       },
