@@ -18,3 +18,5 @@ jobs:
         run: npm i
       - name: Lint title
         uses: dreampulse/action-lint-pull-request-title@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
