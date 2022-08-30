@@ -54,6 +54,11 @@ jobs:
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
+      - name: Publish @astral/prettier-config
+        run: npm publish ./packages/prettier-config/lib
+        env:
+          NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
   notify:
     name: notify
     needs: releasePackages
@@ -73,6 +78,9 @@ jobs:
             📦  @astral/eslint-config-node: ${{ github.event.release.tag_name }}
             📦  @astral/eslint-config-node-ts: ${{ github.event.release.tag_name }}
             📦  @astral/eslint-config-react-ts: ${{ github.event.release.tag_name }}
+
+            ⚡️ <b>Prettier</b>
+            📦  @astral/prettier-config: ${{ github.event.release.tag_name }}
 
             ⚡️ <b>Stylelint</b>
             📦  @astral/stylelint-config-styled: ${{ github.event.release.tag_name }}
