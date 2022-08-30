@@ -54,6 +54,11 @@ jobs:
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
+      - name: Publish @astral/prettier-config
+        run: npm publish ./packages/prettier-config/lib
+        env:
+          NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
   notify:
     name: notify
     needs: releasePackages
