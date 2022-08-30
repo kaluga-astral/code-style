@@ -1,5 +1,5 @@
 {
-  "name": "@astral/eslint-config-base",
+  "name": "@astral/prettier-config",
   "main": "index.js",
   "version": "1.0.0",
   "scripts": {
@@ -8,17 +8,10 @@
     "publish": "npm publish ./lib",
     "lint": "eslint . --fix --quiet"
   },
-  "dependencies": {
-    "eslint-config-prettier": "8.5.0",
-    "eslint-plugin-import": "2.26.0",
-    "eslint-plugin-prettier": "4.0.0",
-    "@astral/prettier-config": "*"
-  },
   "devDependencies": {
     "@astral/eslint-config-node": "*"
   },
   "peerDependencies": {
-    "eslint": "8.x.x",
     "prettier": "2.x.x"
   }
 }
