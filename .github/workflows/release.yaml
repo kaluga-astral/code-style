@@ -79,6 +79,9 @@ jobs:
             📦  @astral/eslint-config-node-ts: ${{ github.event.release.tag_name }}
             📦  @astral/eslint-config-react-ts: ${{ github.event.release.tag_name }}
 
+            ⚡️ <b>Prettier</b>
+            📦  @astral/prettier-config: ${{ github.event.release.tag_name }}
+
             ⚡️ <b>Stylelint</b>
             📦  @astral/stylelint-config-styled: ${{ github.event.release.tag_name }}
 
