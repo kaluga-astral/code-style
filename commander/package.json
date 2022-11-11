@@ -15,6 +15,6 @@
     "@commitlint/load": "^17.0.3"
   },
   "devDependencies": {
-    "@astral/eslint-node": "^1.0.0"
+    "@astral/eslint-config-node": "*"
   }
 }

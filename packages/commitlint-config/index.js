@@ -8,6 +8,7 @@ const DEFAULT_TYPE_ENUM = [
   'chore',
   'revert',
   'style',
+  'test',
 ];
 
 /**

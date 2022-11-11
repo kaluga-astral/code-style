@@ -20,6 +20,7 @@ ENUM:
 - doc
 - build
 - chore
+- test - изменения, которые коснулись тестов
 
 #### Valid
 ```feat(UIKIT-222,ui): Title```
