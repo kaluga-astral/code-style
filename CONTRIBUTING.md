@@ -21,6 +21,7 @@ ENUM:
 - build
 - chore
 - test - изменения, которые коснулись тестов
+- next - breaking changes, которые тригернут major релиз. Полезен для пакетов
 
 #### Valid
 ```feat(UIKIT-222,ui): Title```
