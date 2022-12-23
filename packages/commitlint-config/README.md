@@ -56,6 +56,7 @@ Default ENUM:
 - doc
 - build
 - chore
+- major
 
 # API
 ## createConfig

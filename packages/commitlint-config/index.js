@@ -9,7 +9,7 @@ const DEFAULT_TYPE_ENUM = [
   'revert',
   'style',
   'test',
-  'next',
+  'major',
 ];
 
 /**
