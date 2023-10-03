@@ -4,6 +4,13 @@ module.exports = {
   extends: ['plugin:prettier/recommended'],
   plugins: ['prettier', 'import'],
   rules: {
+    // Предупреждает о наличии циклических зависимостей в проекте.
+    "import/no-cycle": [
+      "warning",
+      {
+        "ignoreExternal": true
+      }
+    ],
     // определяется конфиг для prettier для того, чтобы его не надо было определять в проекте
     'prettier/prettier': ['error', prettierConfig],
 
