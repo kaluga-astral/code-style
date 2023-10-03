@@ -6,7 +6,7 @@ module.exports = {
   rules: {
     // Предупреждает о наличии циклических зависимостей в проекте.
     "import/no-cycle": [
-      "warning",
+      "warn",
       {
         "ignoreExternal": true
       }
