@@ -1,5 +1,15 @@
 const path = require('path');
 
+const { propertyGroups } = require('stylelint-config-clean-order');
+
+const propertiesOrder = propertyGroups.map((properties) => ({
+  // Запрет на пустые строки между правилами внутри группы
+  noEmptyLineBetween: true,
+  // Пустая строка между группами правил
+  emptyLineBefore: 'always',
+  properties,
+}));
+
 module.exports = {
   files: [
     `${path.sep}**${path.sep}*.ts`,
@@ -12,12 +22,11 @@ module.exports = {
 
   extends: [
     'stylelint-config-standard',
-    // группирует правила по блокам
-    'stylelint-config-rational-order',
+    'stylelint-config-clean-order',
     'stylelint-prettier/recommended',
   ],
 
-  plugins: ['stylelint-prettier', 'stylelint-order'],
+  plugins: ['stylelint-prettier'],
 
   rules: {
     // отключено из-за несовместимости со styled
@@ -30,14 +39,11 @@ module.exports = {
     // разрешен kebab case (используется в mui)
     'selector-class-pattern':
       '(([A-Z][a-z0-9]+)*)+(_[a-z0-9]+([A-Z][a-z0-9]+)*)?(-[a-z0-9]+([A-Z][a-z0-9]+)*)?',
-    'plugin/rational-order': [
-      true,
-      {
-        'empty-line-between-groups': true,
-      },
-    ],
 
-    // отключено из-за конфликта с plugin/rational-order
+    'order/properties-order': [
+      propertiesOrder,
+      { unspecified: 'bottomAlphabetical', severity: 'error' },
+    ],
     'declaration-empty-line-before': null,
   },
 };
