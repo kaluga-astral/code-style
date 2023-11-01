@@ -1,5 +1,4 @@
-import { styled } from '@astral/ui';
-import { Grid, Typography } from '@astral/ui';
+import { Grid, Typography, styled } from '@astral/ui';
 
 export const UserInfoWrapper = styled(Grid)`
   position: relative;
