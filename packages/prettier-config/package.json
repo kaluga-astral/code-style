@@ -12,6 +12,6 @@
     "@astral/eslint-config-node": "*"
   },
   "peerDependencies": {
-    "prettier": "2.x.x"
+    "prettier": "3.x.x"
   }
 }
