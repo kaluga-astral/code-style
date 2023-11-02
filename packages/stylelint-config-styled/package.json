@@ -13,12 +13,12 @@
     "postcss": "^8.4.14",
     "postcss-syntax": "^0.36.2",
     "stylelint-config-clean-order": "^5.2.0",
-    "stylelint-config-prettier": "^9.0.3"
-  },
-  "devDependencies": {
-    "@astral/eslint-config-node": "*",
+    "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^34.0.0",
     "stylelint-prettier": "^4.0.2"
+  },
+  "devDependencies": {
+    "@astral/eslint-config-node": "*"
   },
   "peerDependencies": {
     "prettier": "3.x.x",
