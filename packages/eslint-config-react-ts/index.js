@@ -67,6 +67,9 @@ module.exports = {
 
     // не дает указывать any в коде
     '@typescript-eslint/no-explicit-any': 'error',
+
+    // единообразит импорт TS типов (каждый импорт типа осуществляется через type)
+    '@typescript-eslint/consistent-type-imports': 'error',
   },
 
   settings: {
