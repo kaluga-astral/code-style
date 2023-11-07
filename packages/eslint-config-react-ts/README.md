@@ -6,6 +6,8 @@ Eslint config for react with typescript
 
 ## Migration Guide 2.0
 
+### Отказ от поддержки prettier 3v
+
 Были обновлены пакеты:
 -prettier: "^3.0.3",
 -eslint: "^8.52.0",
@@ -15,6 +17,8 @@ Eslint config for react with typescript
 -stylelint-prettier: "^4.0.2"
 
 для коректной работы нужно будет обновить зависимости которые используются у вас в проекте.
+
+### Разделение импорта типов и реализации
 
 Было добавлено новое правило :
 
