@@ -69,7 +69,14 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'error',
 
     // единообразит импорт TS типов (каждый импорт типа осуществляется через type)
-    '@typescript-eslint/consistent-type-imports': 'error',
+    '@typescript-eslint/consistent-type-imports': [
+      2,
+      {
+        prefer: 'type-imports',
+        // отключаем дефолтный автофикс с переносом типов в отдельный импорт
+        fixStyle: 'inline-type-imports',
+      },
+    ],
   },
 
   settings: {
