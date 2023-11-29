@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactNode } from 'react';
+import { type FunctionComponent, type ReactNode } from 'react';
 
 import { getIndicatorName } from './utils';
 import { IndicatorWrapper } from './styles';

@@ -1,5 +1,9 @@
 # GIT
 
+##
+
+Для тестирования работоспособности, нужно перейти в дерикторию ./exapmple и запустить линтры для разной среды [ts-react, node-ts, node].
+
 ## Модель ветвления GIT
 
 Модель ветвления GIT описана [здесь](https://github.com/kaluga-astral/docs/blob/main/GIT.md).
@@ -10,7 +14,7 @@
 
 ### Формат коммита
 
-```${ENUM}(SCOPE|UIKIT-222): Description```
+`${ENUM}(SCOPE|UIKIT-222): Description`
 
 ENUM:
 - feat - добавлена новая фича. Можно связать с релизом minor версии
@@ -26,10 +30,12 @@ ENUM:
 - major - breaking changes. Полезен для пакетов. Можно связать с релизом major версии
 
 #### Valid
-```feat(UIKIT-222,ui): Title```
-```feat: Title```
-```feat(UIKIT-222): Title```
+
+`feat(UIKIT-222,ui): Title`
+`feat: Title`
+`feat(UIKIT-222): Title`
 
 #### Invalid
-```feat(UIKIT222): Title```
-```feat(unknown): Title```
+
+`feat(UIKIT222): Title`
+`feat(unknown): Title`

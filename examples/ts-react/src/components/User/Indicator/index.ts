@@ -1,1 +1,1 @@
-export { default as Indicator } from './Indicator';
+export { Indicator } from './Indicator';

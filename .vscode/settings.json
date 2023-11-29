@@ -2,6 +2,7 @@
   "eslint.workingDirectories": [
     "packages/ui",
     "packages/icons",
-    "packages/fonts"
+    "packages/fonts",
+    "examples/ts-react"
   ]
 }
