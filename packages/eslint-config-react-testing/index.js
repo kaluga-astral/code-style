@@ -1,7 +1,4 @@
 module.exports = {
-  extends: [
-    '@astral/eslint-config-unit-testing',
-    'plugin:testing-library/react',
-  ],
+  extends: ['@astral/eslint-config-unit-testing'],
   plugins: ['testing-library'],
 };
