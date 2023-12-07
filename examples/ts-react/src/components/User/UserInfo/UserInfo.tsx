@@ -1,10 +1,10 @@
-import { Grid, Typography } from '@astral/ui';
+// @ts-nocheck
+import { Grid, Typography, styled } from '@astral/ui';
 
 import { Indicator } from '../Indicator';
 
 import { getUserFullInfo } from './utils';
 import { useUserList } from './hooks';
-import { UserInfoTitle, UserInfoWrapper } from './styles';
 import { UserStatus } from './enums';
 
 type Props = {
@@ -14,13 +14,35 @@ type Props = {
   onClickBtn: () => void;
 };
 
+const UserInfoWrapper = styled(Grid)`
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: ${({ theme }) => theme.typography.button.fontWeight};
+  font-size: ${({ theme }) => theme.typography.button.fontSize};
+  font-family: Ubuntu, serif;
+
+  border: none;
+  border-radius: ${({ theme }) => theme.shape.small};
+  cursor: pointer;
+`;
+
+const UserInfoTitle = styled(Typography)`
+  text-align: center;
+`;
+
 const UserInfo = ({ title, userName, userEmail, onClickBtn }: Props) => {
   const list = useUserList();
 
   return (
-    <UserInfoWrapper templateColumns="1fr 1fr" spacing={2}>
-      <Grid column="1 / -1">
-        <UserInfoTitle variant="h3">{title}</UserInfoTitle>
+    <UserInfoWrapper backgroundColor="red" spacing={2}>
+      <Grid columns={3}>
+        <UserInfoTitle border="2px solid" variant="h3">
+          {title}
+        </UserInfoTitle>
       </Grid>
       <Typography>{userName}</Typography>
       <Typography>{userEmail}</Typography>

@@ -1,0 +1,20 @@
+{
+  "name": "@astral/eslint-config-unit-testing",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "commander build",
+    "publish": "npm publish ./lib",
+    "lint": "eslint . --fix --quiet"
+  },
+  "dependencies": {
+    "eslint-plugin-jest": "^27.6.0"
+  },
+  "devDependencies": {
+    "@astral/eslint-config-node": "*"
+  },
+  "peerDependencies": {
+    "eslint": "8.x.x",
+    "prettier": "3.x.x"
+  }
+}
