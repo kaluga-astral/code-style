@@ -3,11 +3,11 @@
   "overrides": [
     {
       "files": "**/*.test.tsx",
-      "extends": ["@astral/eslint-config-react-testing"]
+      "extends": ["@astral/eslint-config-react-vitest"]
     },
     {
       "files": "**/*.test.ts",
-      "extends": ["@astral/eslint-config-unit-testing"]
+      "extends": ["@astral/eslint-config-vitest"]
     }
   ]
 }

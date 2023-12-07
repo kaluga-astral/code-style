@@ -1,5 +1,5 @@
 {
-  "name": "@astral/eslint-config-unit-testing",
+  "name": "@astral/eslint-config-react-vitest",
   "main": "index.js",
   "scripts": {
     "dev": "tsc --watch",
@@ -8,7 +8,8 @@
     "lint": "eslint . --fix --quiet"
   },
   "dependencies": {
-    "eslint-plugin-vitest": "^0.3.10"
+    "@astral/eslint-config-vitest": "*",
+    "eslint-plugin-testing-library": "^6.2.0"
   },
   "devDependencies": {
     "@astral/eslint-config-node": "*"

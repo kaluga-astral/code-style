@@ -44,13 +44,13 @@ jobs:
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
-      - name: Publish @astral/eslint-config-react-testing
-        run: npm publish ./packages/eslint-config-react-testing/lib
+      - name: Publish @astral/eslint-config-react-vitest
+        run: npm publish ./packages/eslint-config-react-vitest/lib
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
-      - name: Publish @astral/eslint-config-unit-testing
-        run: npm publish ./packages/eslint-config-unit-testing/lib
+      - name: Publish @astral/eslint-config-vitest
+        run: npm publish ./packages/eslint-config-vitest/lib
         env:
           NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 

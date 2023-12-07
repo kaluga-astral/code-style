@@ -15,8 +15,8 @@
   "devDependencies": {
     "@astral/eslint-config-react-ts": "*",
     "@astral/stylelint-config-styled": "*",
-    "@astral/eslint-config-unit-testing": "*",
-    "@astral/eslint-config-react-testing": "*",
+    "@astral/eslint-config-react-vitest": "*",
+    "@astral/eslint-config-vitest": "*",
     "eslint": "^8.15.0",
     "prettier": "^3.0.3",
     "stylelint": "^15.11.0",
