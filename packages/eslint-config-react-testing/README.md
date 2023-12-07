@@ -1,62 +1,45 @@
-# @astral/eslint-config-react-ts
+# @astral/eslint-config-react-testing
 
-Eslint config for react with typescript
+Единый eslint config для компонентного тестирования react с использованием ```@testing-library/react```.
 
-# Usage
+Расширяет [@astral/eslint-config-unit-testing](https://www.npmjs.com/package/@astral/eslint-config-unit-testing).
 
-## Migration Guide 2.0
-
-### Отказ от поддержки prettier v2
-
-Были обновлены пакеты:
--prettier: "^3.0.3",
--eslint: "^8.52.0",
--eslint-plugin-prettier: "^5.0.1"
--stylelint: "^15.11.0",
--stylelint-config-standard: "^34.0.0",
--stylelint-prettier: "^4.0.2"
-
-Для коректной работы нужно будет обновить зависимости которые используются у вас в проекте.
-
-### Разделение импорта типов и реализации
-
-Было добавлено новое правило :
-
-```json
-...
-{ "@typescript-eslint/consistent-type-imports": "error" }
-...
-```
-
-`Пример правильного использования`
-
-```typescript
-import type { Foo } from 'Foo';
-import type Bar from 'Bar';
-type T = Foo;
-const x: Bar = 1;
-```
-
-## Installation
+# Installation
 
 ### Npm
 
 ```shell
-npm i eslint prettier @astral/eslint-config-react-ts --save-dev
+npm i @astral/eslint-config-react-testing @astral/eslint-config-unit-testing --save-dev
 ```
 
 ### Yarn
 
 ```shell
-yarn add eslint prettier @astral/eslint-config-react-ts -D
+yarn add @astral/eslint-config-react-testing @astral/eslint-config-unit-testing -D
 ```
+
+# Usage
+
+Для оптимизации необходимо отдельно определять конфиг через overrides для ts и tsx файлов.
 
 `.eslintrc`
 
 ```json
 {
-  "extends": ["@astral/eslint-config-react-ts"]
+  "extends": "@astral/eslint-config-react-ts",
+  "overrides": [
+    {
+      "files": "**/*.test.tsx",
+      "extends": ["@astral/eslint-config-react-testing"]
+    },
+    {
+      "files": "**/*.test.ts",
+      "extends": ["@astral/eslint-config-unit-testing"]
+    }
+  ]
 }
 ```
 
-`.prettierrc` файл не нужен так, как он сконфигурирован внутри @astral/eslint-config-react-ts
+# Rules
+
+Список правил доступен в [исходниках](https://github.com/kaluga-astral/code-style/blob/main/packages/eslint-config-react-testing/index.js).

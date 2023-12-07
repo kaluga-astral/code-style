@@ -1,62 +1,78 @@
-# @astral/eslint-config-react-ts
+# @astral/eslint-config-unit-testing
 
-Eslint config for react with typescript
+Единый eslint config для unit-тестов.
 
-# Usage
+Реализует часть правил, описанных в [Astral Unit Testing Style Guide](https://industrious-search-cdf.notion.site/Astral-Frontend-Unit-Testing-Style-Guide-bb6ec75b67a449f68bc8eebd36d6fec8).
 
-## Migration Guide 2.0
-
-### Отказ от поддержки prettier v2
-
-Были обновлены пакеты:
--prettier: "^3.0.3",
--eslint: "^8.52.0",
--eslint-plugin-prettier: "^5.0.1"
--stylelint: "^15.11.0",
--stylelint-config-standard: "^34.0.0",
--stylelint-prettier: "^4.0.2"
-
-Для коректной работы нужно будет обновить зависимости которые используются у вас в проекте.
-
-### Разделение импорта типов и реализации
-
-Было добавлено новое правило :
-
-```json
-...
-{ "@typescript-eslint/consistent-type-imports": "error" }
-...
-```
-
-`Пример правильного использования`
-
-```typescript
-import type { Foo } from 'Foo';
-import type Bar from 'Bar';
-type T = Foo;
-const x: Bar = 1;
-```
-
-## Installation
+# Installation
 
 ### Npm
 
 ```shell
-npm i eslint prettier @astral/eslint-config-react-ts --save-dev
+npm i @astral/eslint-config-unit-testing --save-dev
 ```
 
 ### Yarn
 
 ```shell
-yarn add eslint prettier @astral/eslint-config-react-ts -D
+yarn add @astral/eslint-config-unit-testing -D
 ```
+
+# Usage
 
 `.eslintrc`
 
 ```json
 {
-  "extends": ["@astral/eslint-config-react-ts"]
+  "extends": ["@astral/eslint-config-react-ts"],
+  "overrides": [
+    {
+      "files": "**/*.test.ts",
+      "extends": ["@astral/eslint-config-unit-testing"]
+    }
+  ]
 }
 ```
 
-`.prettierrc` файл не нужен так, как он сконфигурирован внутри @astral/eslint-config-react-ts
+## React
+
+Для react приложений совместно с ```@astral/eslint-config-unit-testing``` используется [@astral/eslint-config-react-testing](https://www.npmjs.com/package/@astral/eslint-config-react-testing).
+
+
+### Installation
+
+#### Npm
+
+```shell
+npm i @astral/eslint-config-unit-testing @astral/eslint-config-react-testing --save-dev
+```
+
+#### Yarn
+
+```shell
+yarn add @astral/eslint-config-unit-testing @astral/eslint-config-react-testing -D
+```
+
+#### Usage
+
+`.eslintrc`
+
+```json
+{
+  "extends": "@astral/eslint-config-react-ts",
+  "overrides": [
+    {
+      "files": "**/*.test.tsx",
+      "extends": ["@astral/eslint-config-react-testing"]
+    },
+    {
+      "files": "**/*.test.ts",
+      "extends": ["@astral/eslint-config-unit-testing"]
+    }
+  ]
+}
+```
+
+# Rules
+
+Список правил доступен в [исходниках](https://github.com/kaluga-astral/code-style/blob/main/packages/eslint-config-unit-testing/index.js).
