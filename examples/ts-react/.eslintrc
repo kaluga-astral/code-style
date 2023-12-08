@@ -1,3 +1,13 @@
 {
-  "extends": "@astral/eslint-config-react-ts"
+  "extends": "@astral/eslint-config-react-ts",
+  "overrides": [
+    {
+      "files": "**/*.test.tsx",
+      "extends": ["@astral/eslint-config-react-vitest"]
+    },
+    {
+      "files": "**/*.test.ts",
+      "extends": ["@astral/eslint-config-vitest"]
+    }
+  ]
 }
