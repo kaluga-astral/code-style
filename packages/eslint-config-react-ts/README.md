@@ -20,7 +20,7 @@ Eslint config for react with typescript
 
 ### Разделение импорта типов и реализации
 
-Было добавлено новое правило :
+Было добавлено новое правило:
 
 ```json
  "@typescript-eslint/consistent-type-imports": "error" 
@@ -71,10 +71,25 @@ yarn add eslint prettier @astral/eslint-config-react-ts -D
 
 Плагин `import` внутри себя использует собственный парсер, который не дружит с большим количеством path aliases.
 
-#### Решение
-Создать копию tsconfig без `"paths": {...}`. 
+Парсер `@typescript-eslint/parser` не дружит с монорепозиторием (see: https://github.com/typescript-eslint/typescript-eslint/issues/1192) 
 
-В `.eslintrc` файле указать путь к новому файлу:
+#### Решение
+Создать копию tsconfig без `"paths": {...}` и с опцией `"forceConsistentCasingInFileNames": false`
+
+Пример получившегося `tsconfig.eslint.json`:
+```tsconfig.eslint.json
+{
+  "extends": "../../../tooling/client/tsconfig.json",
+  "include": ["./**/*.js", "./**/*.ts", "./**/*.tsx"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "forceConsistentCasingInFileNames": false
+  }
+}
+```
+
+В `.eslintrc` файле указать путь к новому конфигу файлу:
 ```eslintrc
   "parserOptions": {
     "project": "tsconfig.eslint.json"
