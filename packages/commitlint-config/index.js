@@ -16,7 +16,7 @@ const DEFAULT_TYPE_ENUM = [
  * Создает commitlint config
  * @param {Object} params - Параметры инициализации конфига.
  * @param {string[]} [params.scopes=[]] - Список доступных scopes.
- * @param {string} params.ticketPrefix - Название префикса задач, данный префикс будет доступен в scope.
+ * @param {string} params.ticketPrefix - Название префикса или список названий префиксов задач, данный префикс будет доступен в scope.
  * @param {string[]} [params.typeEnum=[]] - Список доступных type.
  * @example
  * // createConfig({ scopes: ['server', 'ui'], ticketPrefix: 'UIKIT' })
@@ -63,13 +63,17 @@ const createConfig = ({
       2,
       'always',
       ({ scope }) => {
-        const isTicketScope = scope?.startsWith(`${ticketPrefix}-`);
+        const ticketPrefixes = Array.isArray(ticketPrefix) ? ticketPrefix : [ticketPrefix];
+
+        const isTicketScope = ticketPrefixes.some((prefix) => scope?.startsWith(`${prefix}-`))
 
         if (!scope || scopes.includes(scope) || isTicketScope) {
           return [true];
         }
 
-        const scopesEnumsMessage = [...scopes, `${ticketPrefix}-XXXX`].join(
+        const formattedTickets = ticketPrefixes.map((ticket) =>`${ticket}-XXXX`);
+
+        const scopesEnumsMessage = [...scopes, ...formattedTickets].join(
           ', ',
         );
 
